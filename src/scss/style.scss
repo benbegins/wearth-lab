@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+//Abstracts
+@import "./abstracts/variables";
+@import "./abstracts/fonts";
+@import "./abstracts/global";
+@import "./abstracts/spacing";

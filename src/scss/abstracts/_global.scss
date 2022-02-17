@@ -1,0 +1,23 @@
+::selection {
+	background: red;
+	color: white;
+}
+
+html {
+	scroll-behavior: smooth;
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: sans-serif;
+	font-weight: 400;
+	@apply text-base;
+}
+
+.container {
+	max-width: none;
+}
