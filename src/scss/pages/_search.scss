@@ -1,0 +1,33 @@
+.page-search {
+	.hero {
+		padding: var(--section-padding-sm) 0;
+		animation: fondu 1.5s backwards;
+		animation-delay: 0.25s;
+	}
+
+	.liste-produits {
+		@include section-pad-bottom;
+
+		&__container {
+			animation: fondu 1.5s backwards;
+			animation-delay: 0.5s;
+
+			.card-product {
+				margin-bottom: 3rem;
+
+				@media screen and (min-width: $md) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.no-result {
+			@include text-lg;
+			text-align: center;
+			width: 100%;
+			line-height: 1.5;
+			max-width: $lg;
+			margin: 0 auto;
+		}
+	}
+}

@@ -1,23 +1,20 @@
-// Poppins Black 900
-// Nunito Sans 400 / 700 / 800
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&family=Poppins:wght@900&display=swap");
+// Freight sans 400 / 600
+// Freight display 700
 
-$nunito: "Nunito Sans", sans-serif;
-$poppins: "Poppins", sans-serif;
+$font-base: "freight-sans-pro", sans-serif;
+$font-display: "freight-display-pro", sans-serif;
 
 body {
-	font-family: "Nunito Sans", sans-serif;
+	font-family: $font-base;
 	font-weight: 400;
-	line-height: 1.6;
+	line-height: 1.8;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 // TEXT SM
 @mixin text-sm {
-	font-size: 0.9375rem;
-	font-size: clamp(0.81rem, 0.78rem + 0.15vw, 0.94rem);
-	line-height: 1.6;
+	font-size: 0.875rem;
 }
 .text-sm {
 	@include text-sm;
@@ -25,9 +22,7 @@ body {
 
 // TEXT BASE
 @mixin text-base {
-	font-size: 1.125rem;
-	font-size: clamp(0.94rem, 0.89rem + 0.22vw, 1.13rem);
-	line-height: 1.6;
+	font-size: 1rem;
 }
 .text-base {
 	@include text-base;
@@ -35,9 +30,8 @@ body {
 
 // TEXT LG
 @mixin text-lg {
-	font-size: 1.625rem;
-	font-size: clamp(1.13rem, 1.02rem + 0.51vw, 1.56rem);
-	line-height: 1.6;
+	font-size: 3.125rem;
+	font-size: max(2.06rem, calc(1.81rem + 1.25vw));
 }
 .text-lg {
 	@include text-lg;
@@ -45,9 +39,8 @@ body {
 
 // TEXT XL
 @mixin text-xl {
-	font-size: 2.125rem;
-	font-size: clamp(1.63rem, 1.49rem + 0.66vw, 2.19rem);
-	line-height: 1.6;
+	font-size: 6.25rem;
+	font-size: max(3.44rem, 2.78rem + 3.31vw);
 }
 .text-xl {
 	@include text-xl;
@@ -55,8 +48,8 @@ body {
 
 // TEXT 2XL
 @mixin text-2xl {
-	font-size: 4.375rem;
-	font-size: max(2.19rem, 1.67rem + 2.57vw);
+	font-size: 13.75rem;
+	font-size: max(4rem, 12.5vw);
 	line-height: 1;
 }
 .text-2xl {

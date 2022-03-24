@@ -1,0 +1,31 @@
+.liste-produits {
+	&__container {
+		margin-top: 2rem;
+
+		@media screen and (min-width: $md) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: var(--column-spacing);
+			row-gap: calc(var(--column-spacing) * 2);
+		}
+
+		@media screen and (min-width: $lg) {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+
+	.card-product {
+		@media screen and (min-width: $lg) {
+			grid-column: span 3;
+
+			&:nth-child(5),
+			&:nth-child(6),
+			&:nth-child(7),
+			&:nth-child(7n + 5),
+			&:nth-child(7n + 6),
+			&:nth-child(7n + 7) {
+				grid-column: span 4;
+			}
+		}
+	}
+}

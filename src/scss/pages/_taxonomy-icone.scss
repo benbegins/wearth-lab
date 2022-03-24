@@ -1,0 +1,177 @@
+.taxonomy-icone {
+	// Hero
+	.hero {
+		padding: var(--section-padding-sm) 0;
+
+		.container {
+			@media screen and (min-width: $lg) {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+
+		&__title {
+			--icon-size: 68px;
+
+			position: relative;
+			margin-top: var(--icon-size);
+			@include text-xl;
+			font-family: $font-display;
+			line-height: 1;
+			text-transform: uppercase;
+			text-align: center;
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: calc(100% + 10px);
+				left: calc(50% - 42px);
+				width: 84px;
+				height: 15px;
+				background: url("/src//img/icon-wave.svg") no-repeat;
+				background-size: contain;
+				animation: fondu 0.75s backwards;
+				animation-delay: 0.5s;
+
+				@media screen and (min-width: $lg) {
+					left: 0;
+					top: calc(100% + 0.8vw);
+				}
+
+				@media screen and (min-width: $lg) {
+					left: 16%;
+				}
+			}
+
+			@media screen and (min-width: $md) {
+				max-width: 70%;
+				margin: var(--icon-size) auto 0;
+			}
+
+			@media screen and (min-width: $lg) {
+				width: 50%;
+				// margin: 0 0 0 8%;
+				margin: 0;
+				padding-left: 8%;
+				text-align: left;
+			}
+		}
+
+		&__icone {
+			position: absolute;
+			left: calc(50% - (var(--icon-size) / 2));
+			top: calc(var(--icon-size) * -1 - 10px);
+
+			display: flex;
+			width: var(--icon-size);
+			height: var(--icon-size);
+			justify-content: center;
+			align-items: center;
+
+			background: $dark;
+			border-radius: 100%;
+
+			animation: fondu 1.5s backwards;
+			animation-delay: 0.5s;
+
+			@media screen and (min-width: $lg) {
+				left: 0;
+				top: 0.8vw;
+			}
+		}
+
+		&__text {
+			margin-top: var(--section-padding-sm);
+			animation: fondu 0.75s backwards;
+			animation-delay: 0.65s;
+
+			@media screen and (min-width: $lg) {
+				width: 33%;
+				margin-top: 0;
+			}
+		}
+	}
+
+	// Liste produits
+	.liste-produits {
+		&__container {
+			animation: fondu 1.5s backwards;
+			animation-delay: 0.5s;
+
+			.card-product {
+				margin-bottom: 3rem;
+
+				@media screen and (min-width: $md) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.btn-container {
+			text-align: center;
+
+			.btn-primary {
+				margin-top: 4rem;
+			}
+		}
+	}
+
+	// Autres produits par engagement
+	.engagements {
+		@include section-pad;
+
+		&__title {
+			@include text-lg;
+			font-family: $font-display;
+			line-height: 1;
+			text-transform: uppercase;
+
+			.mobile {
+				@media screen and (min-width: $md) {
+					display: none;
+				}
+			}
+		}
+
+		.icones {
+			&__list {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1rem;
+				margin: 2rem 0 3rem;
+
+				@media screen and (min-width: $md) {
+					grid-template-columns: repeat(5, 1fr);
+				}
+
+				@media screen and (min-width: $lg) {
+					grid-template-columns: repeat(12, 1fr);
+					margin: 3rem 0 6rem;
+					gap: 2rem;
+				}
+			}
+
+			&__item {
+				text-align: center;
+				line-height: 1;
+
+				a {
+					transition: opacity 0.1s;
+
+					&:hover {
+						opacity: 0.6;
+					}
+				}
+			}
+
+			&__img-container {
+				display: flex;
+				align-items: flex-end;
+				justify-content: center;
+				height: 50px;
+				margin-bottom: 0.75rem;
+			}
+		}
+	}
+}

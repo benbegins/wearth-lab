@@ -1,0 +1,184 @@
+.page-contact {
+	.hero {
+		&__title {
+			padding: var(--section-padding-sm) 0;
+			@include text-2xl;
+			font-family: $font-display;
+			line-height: 1.03;
+			text-transform: uppercase;
+			text-align: center;
+
+			@media screen and (min-width: $lg) {
+				padding: var(--section-padding-sm) 0
+					calc(var(--section-padding-sm) + 60px);
+			}
+		}
+	}
+
+	.contact__list {
+		text-align: center;
+		animation: fondu 0.75s backwards;
+		animation-delay: 0.5s;
+
+		@media screen and (min-width: $md) {
+			text-align: left;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--column-spacing);
+		}
+
+		@media screen and (min-width: $lg) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		&__item {
+			margin-bottom: 4rem;
+
+			@media screen and (min-width: $md) {
+				margin-bottom: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__title {
+			@include text-lg;
+			font-weight: bold;
+			line-height: 1;
+			font-family: $font-display;
+			margin-bottom: 0.5rem;
+		}
+
+		// Adresse
+		.adresse {
+			.btn-primary {
+				margin-top: 1rem;
+			}
+		}
+
+		// Horaires
+		.horaires {
+			line-height: 1.2;
+		}
+
+		// Contact
+		.contact {
+			a {
+				text-decoration: underline;
+				transition: color 0.25s;
+
+				&:hover {
+					color: $green;
+				}
+			}
+		}
+
+		// Suivez-nous
+		.suivez-nous {
+			--rs-size: 16px;
+			.reseaux {
+				margin-top: 1rem;
+				display: flex;
+				justify-content: center;
+
+				@media screen and (min-width: $md) {
+					flex-direction: column;
+				}
+			}
+
+			.instagram,
+			.facebook {
+				display: block;
+				width: var(--rs-size);
+				height: var(--rs-size);
+				text-indent: -9999px;
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+			.instagram {
+				background: url("/src//img/icon-instagram.svg") center center
+					no-repeat;
+				background-size: contain;
+				margin-right: 3rem;
+
+				@media screen and (min-width: $md) {
+					margin-right: 0;
+					margin-bottom: 1rem;
+				}
+			}
+			.facebook {
+				background: url("/src//img/icon-facebook.svg") center center
+					no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+
+	// MAP
+	.map {
+		padding: var(--section-padding-sm) 0;
+		animation: fondu 0.75s backwards;
+		animation-delay: 0.5s;
+
+		&__wrapper {
+			border-bottom: 5px solid $dark;
+			padding-bottom: 5px;
+		}
+
+		&__link {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			width: 100%;
+			height: 500px;
+			background: $green;
+			border-bottom: 1px solid $dark;
+
+			@media screen and (min-width: $md) {
+				height: 350px;
+			}
+
+			@media screen and (min-width: $lg) {
+				height: 30vw;
+			}
+
+			.reveal-wipe {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		&__img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background: url("/src//img/map-mobile.png") center center no-repeat;
+			background-size: cover;
+
+			@media screen and (min-width: $md) {
+				background: url("/src//img/map-desktop.png") center center
+					no-repeat;
+				background-size: cover;
+			}
+
+			@media screen and (min-width: $lg) {
+				transition: opacity 0.5s, transform 0.75s $ease;
+				transform: scale(1.02);
+				&:hover {
+					opacity: 0.9;
+					transform: scale(1);
+				}
+			}
+		}
+	}
+}

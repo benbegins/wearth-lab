@@ -1,9 +1,39 @@
 @import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+// @import "tailwindcss/components";
+// @import "tailwindcss/utilities";
 
 //Abstracts
 @import "./abstracts/variables";
 @import "./abstracts/fonts";
-@import "./abstracts/global";
 @import "./abstracts/spacing";
+@import "./abstracts/text";
+@import "./abstracts/global";
+@import "./abstracts/anim";
+
+// Components
+@import "./components/header";
+@import "./components/footer";
+@import "./components/page-transition";
+@import "./components/card-product";
+@import "./components/card-marque";
+@import "./components/swiper";
+@import "./components/buttons";
+@import "./components/liste-produits";
+@import "./components/woocommerce";
+@import "./components/encart-hipli";
+@import "./components/search-menu";
+@import "./components/form-search";
+
+// Pages
+@import "./pages/home";
+@import "./pages/marques";
+@import "./pages/a-propos";
+@import "./pages/boutique";
+@import "./pages/single-product";
+@import "./pages/taxonomy-product_cat";
+@import "./pages/taxonomy-marque";
+@import "./pages/taxonomy-icone";
+@import "./pages/contact";
+@import "./pages/index";
+@import "./pages/page-textes";
+@import "./pages/search";

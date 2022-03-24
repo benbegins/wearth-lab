@@ -1,6 +1,8 @@
 //COLORS
 $dark: #22292d;
 $light: #f9f3ed;
+$green: #879c94;
+$orange: #c7974e;
 
 //SCREEN SIZES
 $sm: 640px;
@@ -10,4 +12,7 @@ $xl: 1280px;
 $xxl: 1480px;
 
 //EASE
-$ease: cubic-bezier(0.5, 0, 0, 1);
+$ease: cubic-bezier(0.35, 0, 0, 1);
+
+// BORDER
+$radius: 20px;

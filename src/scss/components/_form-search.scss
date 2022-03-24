@@ -1,0 +1,45 @@
+.form-search {
+	--submit-size: 80px;
+
+	position: relative;
+	max-width: $md;
+	margin: 0 auto;
+	border: 1px solid $dark;
+	border-radius: 9999px;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+
+	@media screen and (min-width: $md) {
+		--submit-size: 90px;
+	}
+
+	input[type="text"] {
+		background: none;
+		width: calc(100% - var(--submit-size));
+		padding: 1rem 2rem;
+		outline: none;
+	}
+
+	input[type="submit"] {
+		position: absolute;
+		right: 0;
+		width: var(--submit-size);
+		height: 100%;
+		background: $dark url("/src/img/icon-btn-search.svg") center center
+			no-repeat;
+		background-size: 17px 17px;
+		border-radius: 9999px;
+		text-indent: -9999px;
+		cursor: pointer;
+		transition: background 0.25s;
+
+		&:hover,
+		&:focus {
+			outline: 0;
+			background: $green url("/src/img/icon-btn-search.svg") center center
+				no-repeat;
+			background-size: 17px 17px;
+		}
+	}
+}

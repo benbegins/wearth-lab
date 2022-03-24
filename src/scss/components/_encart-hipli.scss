@@ -1,0 +1,74 @@
+.encart-hipli {
+	margin-top: var(--section-padding-sm);
+
+	&__wrapper {
+		max-width: $xl;
+		margin: 0 auto;
+		padding: 22px;
+		background: #0e3e4c;
+		color: $light;
+		border-radius: $radius;
+
+		@media screen and (min-width: $md) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		@media screen and (min-width: $lg) {
+			padding: 0 30px;
+		}
+	}
+
+	.images-container {
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+
+		img {
+			border-radius: $radius;
+			width: 170px;
+		}
+
+		.img-01 {
+			position: absolute;
+			left: 0;
+			transform: translateY(-30%);
+
+			@media screen and (min-width: $md) {
+				display: none;
+			}
+
+			@media screen and (min-width: $lg) {
+				display: block;
+				position: relative;
+				transform: translateY(-20%);
+			}
+		}
+
+		.img-02 {
+			@media screen and (min-width: $lg) {
+				transform: translate(-15%, 20%);
+			}
+		}
+	}
+
+	.logo-container {
+		margin: 1rem 0;
+		.img-logo {
+			width: 170px;
+			margin: 0 auto;
+		}
+	}
+
+	.texte-container {
+		@media screen and (min-width: $lg) {
+			padding: 30px 5% 30px 30px;
+		}
+
+		.intro {
+			font-weight: 600;
+			margin-bottom: 0.5rem;
+		}
+	}
+}

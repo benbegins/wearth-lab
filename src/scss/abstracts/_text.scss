@@ -1,0 +1,14 @@
+@mixin section-title {
+	@include text-sm;
+	text-transform: uppercase;
+	color: $green;
+	font-weight: 600;
+	line-height: 1.2;
+
+	@media screen and (min-width: $lg) {
+		@include text-xl;
+		font-family: $font-display;
+		line-height: 0.9;
+		color: $dark;
+	}
+}

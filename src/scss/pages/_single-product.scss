@@ -1,0 +1,358 @@
+.single-product {
+	// HERO
+	.hero {
+		@include section-pad-bottom;
+		padding-top: calc(var(--section-padding) * 2);
+
+		@media screen and (min-width: $lg) {
+			padding-top: 0;
+			display: flex;
+			align-items: flex-start;
+		}
+
+		&__intro-mobile {
+			margin-bottom: 4rem;
+
+			.title {
+				@include text-lg;
+				font-family: $font-display;
+				font-weight: bold;
+				line-height: 1.1;
+				animation: fondu 0.75s backwards;
+				animation-delay: 0.25s;
+			}
+
+			.marque {
+				font-weight: 600;
+				color: $green;
+				animation: fondu 0.75s backwards;
+				animation-delay: 0.35s;
+			}
+
+			.prix {
+				font-size: 1.375rem;
+				font-weight: 600;
+				margin-top: 0.5rem;
+				animation: fondu 0.75s backwards;
+				animation-delay: 0.45s;
+			}
+
+			@media screen and (min-width: $lg) {
+				display: none;
+			}
+		}
+
+		// GALLERY
+		&__gallery-container {
+			position: relative;
+			animation: fondu 0.75s backwards;
+			animation-delay: 0.25s;
+
+			@media screen and (min-width: $lg) {
+				width: 60%;
+				padding: 160px var(--page-padding) 0;
+			}
+
+			.reveal-wipe {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+
+			.img-container {
+				position: relative;
+				width: 100%;
+				height: 0;
+				padding-bottom: 100%;
+				overflow: hidden;
+
+				@media screen and (min-width: $md) {
+					padding-bottom: 80%;
+				}
+
+				@media screen and (min-width: $lg) {
+					padding-bottom: 80%;
+					padding-bottom: clamp(
+						70%,
+						calc(100vh - var(--page-padding) - 160px),
+						50vw
+					);
+				}
+
+				img {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					object-fit: cover;
+					animation: zoom-out 1.5s $ease;
+				}
+
+				@keyframes zoom-out {
+					from {
+						transform: scale(1.25);
+					}
+					to {
+						transform: scale(1);
+					}
+				}
+			}
+		}
+
+		// TEXTE
+		&__text-container {
+			margin-top: 4rem;
+			padding: 0 var(--page-padding);
+
+			@media screen and (min-width: $lg) {
+				width: 40%;
+				margin-top: 0;
+				padding: 160px var(--page-padding) 0 0;
+			}
+
+			.content {
+				animation: fondu 0.75s backwards;
+				animation-delay: 0.5s;
+			}
+
+			.title {
+				display: none;
+				@media screen and (min-width: $lg) {
+					display: block;
+					@include text-lg;
+					font-family: $font-display;
+					font-weight: bold;
+					line-height: 1;
+				}
+			}
+
+			.marque {
+				display: none;
+				@media screen and (min-width: $lg) {
+					display: block;
+					font-weight: 600;
+					color: $green;
+					transition: color 0.25s;
+
+					&:hover {
+						color: $dark;
+					}
+				}
+			}
+
+			.prix {
+				display: none;
+				@media screen and (min-width: $lg) {
+					display: block;
+					font-size: 1.375rem;
+					font-weight: 600;
+					margin-top: 0.5rem;
+				}
+			}
+
+			.description {
+				margin-bottom: 3rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				ul:not(.description__icones__list) {
+					list-style-type: disc;
+					list-style-position: outside;
+					padding-left: 1rem;
+				}
+
+				&__title {
+					font-weight: 600;
+					margin-bottom: 0.5rem;
+				}
+
+				&__principale {
+					@media screen and (min-width: $lg) {
+						margin-top: 3rem;
+					}
+				}
+
+				&__icones {
+					margin-top: 3rem;
+
+					&__list {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+						gap: 1rem;
+
+						@media screen and (min-width: $md) {
+							grid-template-columns: repeat(6, 1fr);
+						}
+					}
+
+					&__item {
+						text-align: center;
+						line-height: 1;
+					}
+
+					&__img-container {
+						display: flex;
+						align-items: flex-end;
+						justify-content: center;
+						height: 50px;
+						margin-bottom: 0.75rem;
+					}
+
+					img {
+						&:hover {
+							opacity: 0.7;
+						}
+					}
+				}
+			}
+
+			.price {
+				margin-bottom: 4rem;
+			}
+
+			.stock {
+				display: none;
+			}
+
+			.quantity {
+				width: 100%;
+				input {
+					background: $light;
+					border: 1px solid $dark;
+					width: 100%;
+					padding-top: 0.75rem;
+					padding-bottom: 0.75rem;
+				}
+			}
+
+			button.button {
+				margin-top: 2rem;
+			}
+
+			form.cart {
+				margin-bottom: 1rem !important;
+			}
+
+			.variations {
+				@include text-sm;
+				margin-bottom: 0 !important;
+
+				select {
+					padding: 1rem;
+					width: 100%;
+					background: $light;
+					border: 1px solid $dark;
+				}
+				label {
+					line-height: 53px;
+				}
+				.reset_variations {
+					text-decoration: underline;
+				}
+
+				tbody > tr > td {
+					padding-bottom: 1rem;
+				}
+			}
+		}
+	}
+
+	// REASSURANCE
+	.reassurance {
+		padding: 4rem 0 5rem;
+		background: $dark;
+		color: $light;
+
+		@media screen and (min-width: $lg) {
+			padding: 6rem 0 7rem;
+		}
+
+		.container {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: var(--column-spacing);
+				row-gap: 3rem;
+				align-items: start;
+			}
+
+			@media screen and (min-width: $lg) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+
+		&__item {
+			position: relative;
+			margin-bottom: 3rem;
+			text-align: center;
+
+			@media screen and (min-width: $md) {
+				margin-bottom: 0;
+			}
+
+			@media screen and (min-width: $lg) {
+				text-align: left;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: -0.75rem;
+				left: calc(50% - 42px);
+
+				display: block;
+				width: 84px;
+				height: 5px;
+
+				background: url("/src/img/icon-single-wave-light.svg") no-repeat;
+				background-size: contain;
+
+				@media screen and (min-width: $lg) {
+					left: 0;
+					bottom: -1rem;
+				}
+			}
+		}
+	}
+
+	// RELATED
+	.produits-related {
+		@include section-pad;
+
+		&__title {
+			@include text-lg;
+			font-family: $font-display;
+			font-weight: bold;
+			line-height: 1;
+		}
+
+		&__container {
+			margin-top: 4rem;
+
+			@media screen and (min-width: $lg) {
+				margin-top: 6rem;
+			}
+		}
+
+		&__btn-boutique {
+			text-align: center;
+			.btn-primary {
+				margin-top: 2rem;
+			}
+		}
+
+		.swiper-slide.last-slide {
+			p {
+				@include text-sm;
+				font-weight: 600;
+				text-transform: uppercase;
+				line-height: 1;
+			}
+		}
+	}
+}

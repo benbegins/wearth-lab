@@ -1,0 +1,28 @@
+.page-textes {
+	.hero {
+		.container {
+			max-width: $lg;
+			margin: 0 auto;
+		}
+
+		&__title {
+			padding: var(--section-padding-sm) 0;
+			@include text-xl;
+			font-family: $font-display;
+			line-height: 1.03;
+			text-transform: uppercase;
+			text-align: left;
+		}
+	}
+
+	.content {
+		@include section-pad-bottom;
+		animation: fondu 0.75s backwards;
+		animation-delay: 0.5s;
+
+		.container {
+			max-width: $lg;
+			margin: 0 auto;
+		}
+	}
+}

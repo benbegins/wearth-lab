@@ -2,7 +2,7 @@
 <?php
 
 // Configure les fonctionnalités de bases
-function nomdutheme_theme_setup(){
+function wearthlab_theme_setup(){
 
     // Prise en charge des images de mise en avant
     add_theme_support('post-thumbnails');
@@ -10,18 +10,29 @@ function nomdutheme_theme_setup(){
     // Ajouter automatiquement le titre du site dans l'entete
     add_theme_support('title-tag');
 
+    // Woocommerce theme support 
+    add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-slider' );
+
     // Ajouts des menus
-    register_nav_menus( array(
-        'main' => 'Menu Principal',
-    ) );
+    // register_nav_menus( array(
+    //     'main' => 'Menu Principal',
+    // ) );
 
 }
-add_action( 'after_setup_theme', 'nomdutheme_theme_setup' );
+add_action( 'after_setup_theme', 'wearthlab_theme_setup' );
 
 // Ajout des scripts
-function nomdutheme_theme_register_assets(){
+function wearthlab_theme_register_assets(){
 
     // CSS
+    wp_enqueue_style( 
+        'font', 
+        'https://use.typekit.net/pig7xlg.css',
+        array(),
+        '1.0'
+    );
+    
     wp_enqueue_style( 
         'style', 
         get_template_directory_uri() . '/dist/main.css',
@@ -46,7 +57,7 @@ function nomdutheme_theme_register_assets(){
     );
 
 }
-add_action( 'wp_enqueue_scripts', 'nomdutheme_theme_register_assets');
+add_action( 'wp_enqueue_scripts', 'wearthlab_theme_register_assets');
 
 
 // Custom image size
@@ -64,3 +75,9 @@ add_filter('auto_plugin_update_send_email', '__return_false');
 
 // Cleanup Wordpress
 require get_template_directory() . '/inc/cleanup.php';
+
+// Custom Post and Taxonomy
+require get_template_directory() . '/inc/custom-post.php';
+
+// Woocommerce
+require get_template_directory() . '/inc/woocommerce.php';

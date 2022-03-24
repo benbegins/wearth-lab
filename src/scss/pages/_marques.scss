@@ -1,0 +1,67 @@
+.page-marques {
+	.hero {
+		&__title {
+			padding: var(--section-padding-sm) 0;
+			@include text-2xl;
+			font-family: $font-display;
+			line-height: 1.03;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		&__text {
+			animation: fondu 0.75s backwards;
+			animation-delay: 0.5s;
+
+			@media screen and (min-width: $lg) {
+				width: 40%;
+			}
+		}
+	}
+
+	.list-marques {
+		@include section-pad-bottom;
+		margin-top: 4rem;
+		animation: fondu 1s backwards;
+		animation-delay: 0.65s;
+
+		&__list {
+			border-bottom: 5px solid $dark;
+			padding-bottom: 5px;
+		}
+
+		&__item {
+			a {
+				position: relative;
+				display: block;
+				@include text-sm;
+				text-transform: uppercase;
+				font-weight: 600;
+				border-bottom: 1px solid $dark;
+				padding: 1rem 0;
+				transition: color 0.3s;
+
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					right: 0;
+					top: calc(50% - 6px);
+					width: 27px;
+					height: 12px;
+					background: url("/src/img/icon-arrow-btn.svg") no-repeat;
+					background-size: contain;
+					transition: transform 0.4s $ease;
+				}
+
+				&:hover {
+					color: $green;
+
+					&::after {
+						transform: translateX(25%);
+					}
+				}
+			}
+		}
+	}
+}

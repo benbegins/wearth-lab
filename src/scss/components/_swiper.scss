@@ -1,0 +1,227 @@
+// Liste produits
+.swiper-list-products {
+	&.swiper {
+		padding: 0 var(--page-padding);
+		z-index: 0;
+	}
+	.swiper-slide {
+		width: 90%;
+		margin-right: var(--column-spacing);
+
+		@media screen and (min-width: $md) {
+			width: 40%;
+		}
+
+		@media screen and (min-width: $lg) {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.swiper-wrapper {
+		@media screen and (min-width: $lg) {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			column-gap: var(--column-spacing);
+		}
+	}
+}
+
+// Liste marques
+.swiper-list-marques {
+	&.swiper {
+		padding: 0 var(--page-padding);
+		z-index: 0;
+	}
+	.swiper-slide {
+		width: 90%;
+		margin-right: var(--column-spacing);
+
+		@media screen and (min-width: $md) {
+			width: 40%;
+		}
+
+		@media screen and (min-width: $lg) {
+			width: calc(
+				((100vw - (var(--page-padding) * 2)) / 4) -
+					(var(--column-spacing) * 0.75)
+			);
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.btn-arrow {
+		display: none;
+
+		@media screen and (min-width: $lg) {
+			display: block;
+			position: absolute;
+			z-index: 30;
+			width: 60px;
+			height: 60px;
+			border-radius: 100%;
+			cursor: pointer;
+			background: $light;
+			transition: background 0.3s;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transition: transform 0.25s ease;
+			}
+
+			&.arrow-left {
+				left: var(--page-padding);
+				transform: translate(-50%, -50%);
+
+				&::after {
+					background: url("/src/img/left-arrow.svg") center center
+						no-repeat;
+					background-size: 21px 21px;
+				}
+			}
+			&.arrow-right {
+				right: var(--page-padding);
+				transform: translate(50%, -50%);
+
+				&::after {
+					background: url("/src/img/right-arrow.svg") center center
+						no-repeat;
+					background-size: 21px 21px;
+				}
+			}
+			&.swiper-button-disabled {
+				&::after {
+					opacity: 0.25;
+				}
+			}
+
+			&:hover {
+				background: darken($light, 5%);
+				&::after {
+					transform: scale(1.1);
+				}
+			}
+			&:active {
+				background: darken($light, 15%);
+			}
+		}
+	}
+}
+
+// Liste gallery product
+.single-product .hero__gallery-container {
+	--arrow-btn: 40px;
+
+	@media screen and (min-width: $lg) {
+		--arrow-btn: 60px;
+	}
+
+	.swiper {
+		padding: 0 0 50px 0;
+		z-index: 0;
+
+		@media screen and (min-width: $lg) {
+			padding: 0;
+			border-radius: $radius;
+		}
+	}
+
+	.swiper-slide {
+		width: 100%;
+	}
+
+	.btn-arrow {
+		display: block;
+		position: absolute;
+		z-index: 30;
+		width: var(--arrow-btn);
+		height: var(--arrow-btn);
+		border-radius: 100%;
+		cursor: pointer;
+		background: $light;
+		transition: background 0.3s;
+
+		bottom: 0;
+
+		@media screen and (min-width: $lg) {
+			bottom: calc(50% - 80px - (var(--arrow-btn) / 2));
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.25s ease;
+		}
+
+		&.arrow-left {
+			left: 50%;
+			transform: translate(-100%, 0);
+
+			@media screen and (min-width: $lg) {
+				left: var(--page-padding);
+				transform: translate(-50%, 0);
+			}
+
+			&::after {
+				background: url("/src/img/left-arrow.svg") center center
+					no-repeat;
+				background-size: 16px 16px;
+
+				@media screen and (min-width: $lg) {
+					background-size: 21px 21px;
+				}
+			}
+		}
+
+		&.arrow-right {
+			right: 50%;
+			transform: translate(100%, 0);
+
+			@media screen and (min-width: $lg) {
+				right: var(--page-padding);
+				transform: translate(50%, 0);
+			}
+
+			&::after {
+				background: url("/src/img/right-arrow.svg") center center
+					no-repeat;
+				background-size: 16px 16px;
+
+				@media screen and (min-width: $lg) {
+					background-size: 21px 21px;
+				}
+			}
+		}
+
+		&.swiper-button-disabled {
+			&::after {
+				opacity: 0.25;
+			}
+		}
+
+		&:hover {
+			background: darken($light, 5%);
+			&::after {
+				transform: scale(1.1);
+			}
+		}
+		&:active {
+			background: darken($light, 15%);
+		}
+	}
+}

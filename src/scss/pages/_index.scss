@@ -1,0 +1,22 @@
+.page-index {
+	.hero {
+		&__title {
+			padding: var(--section-padding-sm) 0;
+			@include text-xl;
+			font-family: $font-display;
+			line-height: 1.03;
+			text-transform: uppercase;
+			text-align: left;
+
+			@media screen and (min-width: $lg) {
+				padding-left: calc(100% / 12);
+			}
+		}
+	}
+
+	.content {
+		@include section-pad-bottom;
+		animation: fondu 0.75s backwards;
+		animation-delay: 0.5s;
+	}
+}

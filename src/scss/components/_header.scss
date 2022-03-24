@@ -1,2 +1,604 @@
 .site-header {
+	--header-padding: 25px;
+	position: relative;
+	z-index: 2;
+	opacity: 0;
+
+	@media screen and (min-width: $lg) {
+		position: fixed;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		height: 160px;
+		display: flex;
+		align-items: center;
+		background: $light;
+		transition: height 0.5s $ease;
+	}
+
+	&.is-scrolling {
+		.site-header__background {
+			opacity: 1;
+		}
+
+		@media screen and (min-width: $lg) {
+			height: 80px;
+
+			.logo__svg {
+				transform: scale(0.8) translateX(-45px);
+
+				.hide-on-scroll {
+					opacity: 0;
+				}
+			}
+
+			.overlay {
+				height: calc(100% - 80px);
+			}
+
+			.search-menu {
+				top: 80px;
+			}
+		}
+	}
+
+	&__background {
+		background: $light;
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		transition: opacity 0.5s;
+
+		@media screen and (min-width: $lg) {
+			display: none;
+		}
+	}
+
+	.container {
+		position: fixed;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: var(--header-padding) var(--page-padding);
+
+		@media screen and (min-width: $lg) {
+			position: static;
+			justify-content: center;
+			padding: 0;
+		}
+	}
+
+	.logo {
+		position: absolute;
+		z-index: 0;
+		width: 123px;
+		height: 116px;
+		left: calc(50% - 61px);
+		top: var(--header-padding);
+
+		@media screen and (min-width: $lg) {
+			left: var(--page-padding);
+			top: auto;
+		}
+
+		&.active {
+			z-index: 1;
+		}
+
+		&__svg {
+			width: 100%;
+			height: 100%;
+			transition: transform 0.5s $ease;
+
+			.hide-on-scroll {
+				transition: opacity 0.3s ease;
+			}
+		}
+	}
+
+	.btn-burger {
+		width: 40px;
+		height: 16px;
+		background: url("/src/img/icon-burger.svg") center center no-repeat;
+		background-size: contain;
+
+		@media screen and (min-width: $lg) {
+			display: none;
+		}
+	}
+
+	// MENU + SOUS MENU
+	.header-menu {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+
+		left: 0;
+		top: 0;
+
+		background: $dark;
+		color: $light;
+
+		transform: translateX(110%);
+		transition: transform 0.8s cubic-bezier(0.25, 0, 0, 1);
+
+		@media screen and (min-width: $lg) {
+			position: relative;
+			width: auto;
+			height: auto;
+			background: none;
+			color: $dark;
+			transform: translateX(0);
+		}
+
+		&.active {
+			transform: translateX(0);
+			transition: transform 0.8s cubic-bezier(0.2, 0, 0, 1);
+
+			.header-menu {
+				&__list {
+					opacity: 1;
+					transform: translateX(0);
+					transition: transform 1.1s cubic-bezier(0, 0, 0, 1),
+						opacity 0.8s 0.25s;
+				}
+				&__title {
+					opacity: 1;
+					transform: translateX(0);
+					transition: transform 1s cubic-bezier(0, 0, 0, 1),
+						opacity 0.8s 0.25s;
+				}
+				&__rs {
+					opacity: 1;
+				}
+				&__btn-close {
+					opacity: 1;
+				}
+				&__btn-back {
+					opacity: 1;
+				}
+			}
+
+			&::before {
+				transform: scaleX(0.25);
+				transition: transform 0.8s ease-out;
+			}
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 10%;
+			height: 100%;
+			right: 100%;
+			top: 0;
+
+			background: $green;
+			transform-origin: right;
+			transform: scaleX(1);
+			transition: transform 0.3s ease-out;
+
+			@media screen and (min-width: $lg) {
+				display: none;
+			}
+		}
+
+		&__container {
+			width: 100%;
+			height: 100%;
+			min-height: 100vh;
+			overflow: scroll;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 15vh 0;
+
+			@media screen and (min-width: $lg) {
+				width: auto;
+				height: auto;
+				min-height: auto;
+				overflow: visible;
+
+				display: block;
+				padding: 0;
+			}
+		}
+
+		&__btn-close {
+			position: absolute;
+			right: var(--page-padding);
+			top: 40px;
+			width: 22px;
+			height: 22px;
+			text-indent: -9999px;
+			background: url("/src/img/icon-close__light.svg") center center
+				no-repeat;
+			background-size: contain;
+			opacity: 0;
+			transition: opacity 0.75s 0.5s;
+
+			@media screen and (min-width: $lg) {
+				display: none;
+			}
+		}
+
+		&__btn-back {
+			position: absolute;
+			left: var(--page-padding);
+			top: 40px;
+			width: 22px;
+			height: 22px;
+			text-indent: -9999px;
+			background: url("/src/img/arrow-right__light.svg") center center
+				no-repeat;
+			background-size: contain;
+			opacity: 0;
+			transition: opacity 0.75s 0.5s;
+			transform: rotate(180deg);
+
+			@media screen and (min-width: $lg) {
+				display: none;
+			}
+		}
+
+		&__title {
+			opacity: 0;
+			font-size: 3.125rem;
+			font-family: $font-display;
+			font-weight: bold;
+			text-transform: uppercase;
+			transform: translateX(200px);
+			transition: all 0.5s 0.5s;
+
+			@media screen and (min-width: $lg) {
+				display: none;
+			}
+		}
+
+		&__list {
+			opacity: 0;
+			text-align: center;
+			transform: translateX(200px);
+			transition: all 0.5s 0.5s;
+
+			@media screen and (min-width: $lg) {
+				transform: translateX(0);
+				opacity: 1;
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		&__item {
+			a,
+			button {
+				position: relative;
+				display: inline-block;
+				font-size: 1.375rem;
+				line-height: 1;
+				text-transform: uppercase;
+				padding: 2.5vh 0;
+
+				@media screen and (min-width: $lg) {
+					@include text-sm;
+					display: block;
+					padding: 0;
+					margin: 0.5rem 14px;
+					overflow: hidden;
+					line-height: 1.8;
+
+					&::before {
+						content: "";
+						display: block;
+						width: 50%;
+						height: 1px;
+						background: $dark;
+						position: absolute;
+						z-index: 1;
+						left: 0;
+						bottom: 0;
+						transform: translateX(-100%);
+						transition: transform 0s;
+					}
+
+					&:hover {
+						&::before {
+							transform: translateX(200%);
+							transition: transform 0.65s
+								cubic-bezier(0.5, 0, 0, 0.5);
+						}
+					}
+				}
+			}
+
+			button {
+				padding-right: 20px;
+				&::after {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: calc(50% - 7px);
+					width: 12px;
+					height: 14px;
+					background: url("/src/img/arrow-right__light.svg") center
+						center no-repeat;
+					background-size: contain;
+				}
+
+				@media screen and (min-width: $lg) {
+					padding: 0;
+					margin: 0.5rem 14px;
+
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&__rs {
+			position: absolute;
+			width: 100%;
+			bottom: var(--page-padding);
+			left: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transition: opacity 0.75s 0.5s;
+
+			@media screen and (min-width: $lg) {
+				display: none;
+			}
+
+			--rs-size: 16px;
+
+			.instagram {
+				width: var(--rs-size);
+				height: var(--rs-size);
+				background: url("/src//img/icon-instagram__light.svg") center
+					center no-repeat;
+				background-size: contain;
+				text-indent: -9999px;
+
+				margin-right: 2rem;
+			}
+			.facebook {
+				width: var(--rs-size);
+				height: var(--rs-size);
+				background: url("/src//img/icon-facebook__light.svg") center
+					center no-repeat;
+				background-size: contain;
+				text-indent: -9999px;
+			}
+		}
+
+		&__img-container {
+			display: none;
+			@media screen and (min-width: $lg) {
+				display: block;
+			}
+		}
+	}
+
+	// SOUS MENU
+	.header-menu.sub-menu {
+		@media screen and (min-width: $lg) {
+			position: absolute;
+			z-index: 1;
+			top: 100%;
+			width: 100%;
+
+			background: $light;
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+			visibility: hidden;
+			transition: visibility 0s 0.75s,
+				clip-path 0.75s cubic-bezier(0.5, 0, 0, 1);
+
+			.header-menu {
+				&__container {
+					padding: 0 var(--page-padding) var(--page-padding);
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					align-items: start;
+					height: 50vw;
+					max-height: calc(90vh - 160px);
+				}
+
+				&__list {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					justify-content: start;
+					text-align: left;
+					opacity: 0;
+					padding-top: var(--page-padding);
+					transform: translateY(75px);
+					transition: all 1.5s $ease;
+				}
+
+				&__item {
+					a,
+					button {
+						display: inline-block;
+						font-weight: 600;
+						word-break: keep-all;
+					}
+				}
+
+				&__img-container {
+					position: relative;
+					height: 100%;
+					width: 70%;
+					// padding-bottom: 60%;
+					margin-left: auto;
+				}
+
+				&__img-title {
+					position: absolute;
+					z-index: 1;
+					@include text-xl;
+					font-family: $font-display;
+					line-height: 1;
+					text-transform: uppercase;
+					transform-origin: top left;
+					transform: rotate(-90deg) translate(-190%, -70%);
+					opacity: 0;
+					transition: all 1.5s $ease;
+				}
+
+				&__img {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					object-fit: cover;
+					opacity: 0;
+					transform: translateY(30%);
+					transition: all 1.5s $ease;
+				}
+			}
+		}
+	}
+	// Submenu desktop active
+	.header-menu.sub-menu.active {
+		@media screen and (min-width: $lg) {
+			visibility: visible;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			transition: visibility 0s,
+				clip-path 0.85s cubic-bezier(0.75, 0, 0, 0.9);
+
+			.header-menu {
+				&__list {
+					opacity: 1;
+					transform: translateY(0);
+					transition: all 0.9s 0.1s $ease;
+				}
+				&__img {
+					opacity: 1;
+					transform: translateY(0);
+					transition: transform 1s 0.1s $ease;
+				}
+				&__img-title {
+					opacity: 1;
+					transform: rotate(-90deg) translate(-110%, -70%);
+					transition: all 1.05s 0.1s $ease;
+				}
+			}
+		}
+	}
+
+	.search-card {
+		display: flex;
+		align-items: center;
+
+		@media screen and (min-width: $lg) {
+			position: absolute;
+			right: var(--page-padding);
+		}
+
+		.btn-search {
+			display: block;
+			height: 16px;
+			width: 16px;
+			margin-right: 1rem;
+			text-indent: -9999px;
+			background: url("/src/img/icon-search.svg") center center no-repeat;
+			background-size: contain;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+
+		.btn-card {
+			display: block;
+			height: 16px;
+			padding-left: 19px;
+			line-height: 16px;
+			font-size: 0.75rem;
+			background: url("/src/img/icon-card.svg") center left no-repeat;
+			background-size: contain;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	// BACKGROUND OVERLAY
+	.overlay {
+		// display: none;
+
+		display: block;
+		position: fixed;
+		z-index: -2;
+		width: 100%;
+		height: calc(100% - 60px);
+		left: 0;
+		bottom: 0;
+		background: black;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.5s;
+
+		@media screen and (min-width: $lg) {
+			height: calc(100% - 160px);
+		}
+
+		&.active {
+			opacity: 0.7;
+			pointer-events: auto;
+		}
+	}
+
+	// MENU SEARCH
+	.search-menu {
+		position: fixed;
+		z-index: -1;
+		top: 66px;
+		left: 0;
+
+		width: 100%;
+		padding: 160px var(--page-padding) 100px;
+
+		background: $light;
+
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		visibility: hidden;
+		transition: visibility 0s 0.75s,
+			clip-path 0.75s cubic-bezier(0.5, 0, 0, 1);
+
+		@media screen and (min-width: $lg) {
+			top: 160px;
+			padding: var(--section-padding-sm) var(--page-padding)
+				calc(var(--section-padding-sm) + 80px);
+		}
+
+		&__container {
+			opacity: 0;
+			transform: translateY(150px);
+			transition: all 0.75s ease-in;
+		}
+
+		&.active {
+			visibility: visible;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			transition: visibility 0s,
+				clip-path 0.85s cubic-bezier(0.5, 0, 0, 1);
+
+			.search-menu__container {
+				transform: translateY(0);
+				opacity: 1;
+				transition: all 0.75s $ease;
+			}
+		}
+	}
 }

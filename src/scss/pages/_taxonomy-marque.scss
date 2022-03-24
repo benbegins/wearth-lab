@@ -1,0 +1,89 @@
+.taxonomy-marque {
+	// Hero
+	.hero {
+		padding: var(--section-padding-sm) 0;
+
+		.container {
+			@media screen and (min-width: $lg) {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+
+		&__title {
+			position: relative;
+			@include text-xl;
+			font-family: $font-display;
+			line-height: 1;
+			text-transform: uppercase;
+			text-align: center;
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: calc(100% + 10px);
+				left: calc(50% - 42px);
+				width: 84px;
+				height: 15px;
+				background: url("/src//img/icon-wave.svg") no-repeat;
+				background-size: contain;
+				animation: fondu 0.75s backwards;
+				animation-delay: 0.5s;
+
+				@media screen and (min-width: $lg) {
+					left: 0;
+					top: calc(100% + 0.8vw);
+				}
+			}
+
+			@media screen and (min-width: $md) {
+				max-width: 70%;
+				margin: 0 auto;
+			}
+
+			@media screen and (min-width: $lg) {
+				width: 50%;
+				margin: 0 0 0 8%;
+				text-align: left;
+			}
+		}
+
+		&__text {
+			margin-top: var(--section-padding-sm);
+			animation: fondu 0.75s backwards;
+			animation-delay: 0.65s;
+
+			@media screen and (min-width: $lg) {
+				width: 33%;
+				margin-top: 0;
+			}
+		}
+	}
+
+	// Liste produits
+	.liste-produits {
+		@include section-pad-bottom;
+
+		&__container {
+			animation: fondu 1.5s backwards;
+			animation-delay: 0.5s;
+
+			.card-product {
+				margin-bottom: 3rem;
+
+				@media screen and (min-width: $md) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.btn-container {
+			text-align: center;
+
+			.btn-primary {
+				margin-top: 4rem;
+			}
+		}
+	}
+}

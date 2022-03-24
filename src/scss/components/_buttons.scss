@@ -1,0 +1,77 @@
+.btn-primary {
+	@include text-sm;
+	font-weight: 600;
+
+	position: relative;
+	z-index: 1;
+
+	display: inline-block;
+	overflow: hidden;
+	padding: 0 2.5rem 2px;
+
+	line-height: 60px;
+	text-transform: uppercase;
+
+	background: $dark;
+	color: $light;
+	border-radius: 9999px;
+
+	transition: box-shadow 0.15s;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		z-index: -1;
+
+		background: $green;
+		width: 120%;
+		height: 360%;
+
+		border-radius: 100%;
+		transform-origin: top center;
+		transform: translate(-50%, 0) scale(0.2, 0.1);
+		transition: transform 0.5s $ease, background 0.15s;
+	}
+
+	&:hover {
+		&::after {
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
+	&:active {
+		&::after {
+			background: darken($green, 10%);
+		}
+	}
+}
+
+.btn-secondary {
+	position: relative;
+	display: inline-block;
+	@include text-sm;
+	text-transform: uppercase;
+	font-weight: 600;
+	padding-right: 35px;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 0;
+		top: calc(50% - 6px);
+		width: 27px;
+		height: 12px;
+		background: url("/src/img/icon-arrow-btn.svg") center center no-repeat;
+		background-size: contain;
+		transition: transform 0.4s $ease;
+	}
+
+	&:hover {
+		&::after {
+			transform: translateX(25%);
+		}
+	}
+}

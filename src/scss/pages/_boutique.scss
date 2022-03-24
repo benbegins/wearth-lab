@@ -1,0 +1,185 @@
+.page-boutique {
+	.page-sub-title {
+		@include text-xl;
+		font-family: $font-display;
+		line-height: 1;
+		text-transform: uppercase;
+
+		.mobile {
+			@media screen and (min-width: $md) {
+				display: none;
+			}
+		}
+	}
+	// CATEGORIES
+	.categories {
+		@include section-pad-bottom;
+
+		&__container {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: var(--column-spacing);
+			}
+		}
+
+		.img-container {
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding-bottom: 80%;
+			overflow: hidden;
+			border-radius: $radius;
+			background: $dark;
+
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				object-fit: cover;
+				opacity: 0.85;
+
+				transition: transform 2s $ease;
+			}
+
+			.reveal-wipe {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		&__link {
+			position: relative;
+			display: block;
+			margin-top: var(--column-spacing);
+			animation: fondu 1.2s backwards;
+			animation-delay: 0.5s;
+
+			&:nth-child(2) {
+				animation-delay: 0.6s;
+			}
+
+			&:hover {
+				img {
+					transform: scale(1.05);
+					transition: transform 5s ease-out;
+				}
+				.categories__title::after {
+					transform: translateX(25%);
+				}
+			}
+		}
+
+		&__title-container {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@include text-xl;
+			font-family: $font-display;
+			line-height: 1;
+			text-transform: uppercase;
+			color: $light;
+		}
+
+		&__title {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: calc(50% - 14px);
+				top: 100%;
+
+				display: block;
+				width: 28px;
+				height: 12px;
+
+				background: url("/src/img/icon-arrow-btn__light.svg") center
+					center no-repeat;
+				background-size: contain;
+
+				transition: transform 0.5s $ease;
+			}
+		}
+
+		&__text {
+			display: none;
+
+			@media screen and (min-width: $lg) {
+				display: block;
+				@include text-lg;
+				line-height: 1.5;
+				margin: 4rem 0 0 auto;
+				width: 80%;
+
+				animation: fondu 1.2s backwards;
+				animation-delay: 0.75s;
+			}
+		}
+	}
+
+	// PAR MARQUE
+	.marques {
+		.swiper-list-marques {
+			margin: 2rem 0;
+		}
+		&__btn {
+			text-align: center;
+		}
+	}
+
+	// PAR ICONES
+	.icones {
+		@include section-pad;
+
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 1rem;
+			margin: 2rem 0 3rem;
+
+			@media screen and (min-width: $md) {
+				grid-template-columns: repeat(5, 1fr);
+			}
+
+			@media screen and (min-width: $lg) {
+				grid-template-columns: repeat(12, 1fr);
+				margin: 3rem 0 6rem;
+				gap: 2rem;
+			}
+		}
+
+		&__item {
+			text-align: center;
+			line-height: 1;
+
+			a {
+				transition: opacity 0.1s;
+
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+
+		&__img-container {
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			height: 50px;
+			margin-bottom: 0.75rem;
+		}
+	}
+}

@@ -1,23 +1,51 @@
 ::selection {
-	background: red;
-	color: white;
+	background: $green;
+	color: $light;
 }
 
-html {
-	scroll-behavior: smooth;
-	@media (prefers-reduced-motion: reduce) {
-		scroll-behavior: auto;
-	}
+html.has-scroll-smooth {
+	overflow: hidden;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-family: sans-serif;
+	font-family: $font-base;
 	font-weight: 400;
-	@apply text-base;
+	background: $light;
+	color: $dark;
+	@include text-base;
+	font-feature-settings: "lnum";
+}
+
+#page {
+	overflow-x: hidden;
 }
 
 .container {
 	max-width: none;
+	padding-left: var(--page-padding);
+	padding-right: var(--page-padding);
+}
+
+.page-container {
+	padding-top: var(--page-top);
+}
+
+.desktop {
+	display: none;
+	@media screen and (min-width: $lg) {
+		display: block;
+	}
+}
+
+.mobile {
+	@media screen and (min-width: $lg) {
+		display: none;
+	}
 }

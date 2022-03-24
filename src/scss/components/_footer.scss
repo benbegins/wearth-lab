@@ -1,2 +1,280 @@
 .site-footer {
+	padding: 0;
+
+	@media screen and (min-width: $lg) {
+		padding: 0 var(--page-padding);
+	}
+
+	&__main {
+		padding: 4rem var(--page-padding);
+		background: $dark;
+		color: $light;
+
+		@media screen and (min-width: $lg) {
+			padding-top: 6rem;
+			border-radius: $radius;
+		}
+	}
+
+	.first {
+		@media screen and (min-width: $lg) {
+			display: grid;
+			grid-template-columns: 3fr 1fr 2fr;
+			column-gap: var(--column-spacing);
+		}
+	}
+
+	&__section {
+		margin-bottom: 4rem;
+	}
+
+	&__title {
+		@include text-lg;
+		line-height: 1;
+		font-family: $font-display;
+		font-weight: bold;
+		margin-bottom: 2rem;
+	}
+
+	&__newsletter {
+		text-align: center;
+
+		@media screen and (min-width: $lg) {
+			text-align: left;
+			width: 80%;
+		}
+
+		.form {
+			margin-top: 2rem;
+
+			.input-container {
+				@media screen and (min-width: $lg) {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					column-gap: 2rem;
+				}
+			}
+			.submit-container {
+				margin-top: 2rem;
+
+				@media screen and (min-width: $lg) {
+					display: flex;
+					align-items: center;
+				}
+			}
+
+			.mentions {
+				font-size: 0.8125rem;
+				opacity: 0.5;
+				margin-top: 1rem;
+
+				@media screen and (min-width: $lg) {
+					margin-top: 0;
+					margin-left: 2rem;
+				}
+			}
+
+			input[type="text"],
+			input[type="email"] {
+				@include text-sm;
+				width: 100%;
+				border-bottom: 1.5px dotted $light;
+				background: none;
+				padding: 0.5rem 0;
+				margin-top: 0.5rem;
+
+				@media screen and (min-width: $lg) {
+					margin-top: 1.5rem;
+				}
+
+				&::placeholder {
+					text-transform: uppercase;
+					font-weight: 600;
+					color: $light;
+				}
+
+				&:focus {
+					outline: none;
+					// background: rgba($light, 0.1);
+					border-bottom: 1.5px solid $orange;
+				}
+			}
+
+			input[type="submit"] {
+				@include text-sm;
+				text-transform: uppercase;
+				font-weight: 600;
+				color: $light;
+				background: $green;
+				border-radius: 9999px;
+				padding: 1.5rem 2rem;
+				line-height: 1;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__suivez-nous {
+		--rs-size: 16px;
+		text-align: center;
+
+		@media screen and (min-width: $lg) {
+			text-align: left;
+		}
+
+		.reseaux {
+			display: flex;
+			justify-content: center;
+
+			@media screen and (min-width: $lg) {
+				flex-direction: column;
+			}
+		}
+
+		.instagram,
+		.facebook {
+			display: block;
+			width: var(--rs-size);
+			height: var(--rs-size);
+			text-indent: -9999px;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+
+		.instagram {
+			background: url("/src//img/icon-instagram__light.svg") center center
+				no-repeat;
+			background-size: contain;
+			margin-right: 3rem;
+
+			@media screen and (min-width: $lg) {
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+		}
+		.facebook {
+			background: url("/src//img/icon-facebook__light.svg") center center
+				no-repeat;
+			background-size: contain;
+		}
+	}
+
+	&__shop-adresse {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 3rem;
+	}
+
+	&__shop {
+		text-align: right;
+
+		@media screen and (min-width: $lg) {
+			text-align: left;
+		}
+
+		nav {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		a {
+			position: relative;
+			display: inline-block;
+			@include text-sm;
+
+			font-weight: 600;
+			text-transform: uppercase;
+			margin: 0.5rem 0;
+			overflow: hidden;
+			line-height: 1.8;
+
+			&::before {
+				content: "";
+				display: block;
+				width: 50%;
+				height: 1px;
+				background: $light;
+				position: absolute;
+				z-index: 1;
+				left: 0;
+				bottom: 0;
+				transform: translateX(-100%);
+				transition: transform 0s;
+			}
+
+			&:hover {
+				&::before {
+					transform: translateX(200%);
+					transition: transform 0.65s cubic-bezier(0.5, 0, 0, 0.5);
+				}
+			}
+		}
+	}
+
+	&__adresse {
+		.content {
+			p {
+				padding: 0.7rem 0;
+				line-height: 1.1rem;
+			}
+		}
+
+		.btn-secondary {
+			&::after {
+				background: url("/src/img/icon-arrow-btn__light.svg") center
+					center no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+
+	.second {
+		img {
+			width: 106px;
+			margin: 0 auto;
+		}
+	}
+
+	// MENTIONS
+	&__mentions {
+		@include text-sm;
+		padding: 1rem 0;
+		text-align: center;
+
+		@media screen and (min-width: $lg) {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.left {
+			@media screen and (min-width: $lg) {
+				display: flex;
+
+				p {
+					margin-right: 2rem;
+				}
+			}
+		}
+
+		a {
+			transition: color 0.25s;
+
+			&:hover {
+				color: $green;
+			}
+		}
+
+		.logo-bemy {
+			img {
+				display: inline;
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
 }

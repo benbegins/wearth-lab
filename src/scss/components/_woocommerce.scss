@@ -1,0 +1,265 @@
+//price
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	@include text-sm;
+	color: $dark;
+}
+
+// Bouton
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+	@include text-sm;
+	font-weight: 600;
+
+	position: relative;
+	z-index: 1;
+
+	display: inline-block;
+	overflow: hidden;
+	padding: 0 2.5rem 2px;
+
+	line-height: 60px;
+	text-transform: uppercase;
+
+	background: $dark;
+	color: $light;
+	border-radius: 9999px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		z-index: -1;
+
+		background: $green;
+		width: 120%;
+		height: 360%;
+
+		border-radius: 100%;
+		transform-origin: top center;
+		transform: translate(-50%, 0) scale(0.2, 0.1);
+		transition: transform 0.5s $ease, background 0.15s;
+	}
+
+	&:hover {
+		background: $dark;
+		&::after {
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
+	&:active {
+		&::after {
+			background: darken($green, 10%);
+		}
+	}
+}
+
+.woocommerce #respond input#submit.alt.disabled,
+.woocommerce #respond input#submit.alt.disabled:hover,
+.woocommerce #respond input#submit.alt:disabled,
+.woocommerce #respond input#submit.alt:disabled:hover,
+.woocommerce #respond input#submit.alt:disabled[disabled],
+.woocommerce #respond input#submit.alt:disabled[disabled]:hover,
+.woocommerce a.button.alt.disabled,
+.woocommerce a.button.alt.disabled:hover,
+.woocommerce a.button.alt:disabled,
+.woocommerce a.button.alt:disabled:hover,
+.woocommerce a.button.alt:disabled[disabled],
+.woocommerce a.button.alt:disabled[disabled]:hover,
+.woocommerce button.button.alt.disabled,
+.woocommerce button.button.alt.disabled:hover,
+.woocommerce button.button.alt:disabled,
+.woocommerce button.button.alt:disabled:hover,
+.woocommerce button.button.alt:disabled[disabled],
+.woocommerce button.button.alt:disabled[disabled]:hover,
+.woocommerce input.button.alt.disabled,
+.woocommerce input.button.alt.disabled:hover,
+.woocommerce input.button.alt:disabled,
+.woocommerce input.button.alt:disabled:hover,
+.woocommerce input.button.alt:disabled[disabled],
+.woocommerce input.button.alt:disabled[disabled]:hover {
+	background: $green;
+	color: $light;
+}
+
+// Button Secondary
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	position: relative;
+	display: inline-block;
+	@include text-sm;
+	text-transform: uppercase;
+	font-weight: 600;
+	// padding-right: 35px;
+	// background: none;
+
+	// &::after {
+	// 	content: "";
+	// 	display: block;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	top: calc(50% - 6px);
+	// 	width: 27px;
+	// 	height: 12px;
+	// 	background: url("/src/img/icon-arrow-btn.svg") center center no-repeat;
+	// 	background-size: contain;
+	// 	transition: transform 0.4s $ease;
+	// }
+
+	// &:hover {
+	// 	&::after {
+	// 		transform: translateX(25%);
+	// 	}
+	// }
+}
+
+// Input
+#add_payment_method table.cart td.actions .coupon .input-text,
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-checkout table.cart td.actions .coupon .input-text {
+	min-width: 150px;
+}
+
+.woocommerce table {
+	border-color: $dark !important;
+}
+
+// Panier & Commande
+.woocommerce__container {
+	form {
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="password"] {
+			@include text-sm;
+			padding: 1rem;
+			width: auto;
+			border: 1px solid $dark;
+			background: $light;
+		}
+		.select2-container--default .select2-selection--single {
+			border: 1px solid $dark;
+			background: $light;
+			height: 53px;
+		}
+		.select2-container--default
+			.select2-selection--single
+			.select2-selection__rendered {
+			color: $dark;
+			@include text-sm;
+			line-height: 53px;
+		}
+		.select2-container--default
+			.select2-selection--single
+			.select2-selection__arrow {
+			height: 50px;
+			border-radius: 0;
+		}
+		textarea {
+			padding: 1rem;
+			border: 1px solid $dark;
+			background: $light;
+			width: auto;
+			min-height: 250px;
+		}
+	}
+	h3,
+	h2 {
+		margin: 60px 0 30px;
+		@include text-lg;
+		font-family: $font-display;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+	.woocommerce-Address-title {
+		margin-top: 60px;
+
+		h3 {
+			margin-top: 0;
+		}
+	}
+	a:hover {
+		color: $green;
+	}
+	mark {
+		background-color: $green;
+	}
+	.quantity .qty {
+		background: $light;
+	}
+	label {
+		@include text-sm;
+	}
+	.woocommerce button.button:disabled,
+	.woocommerce button.button:disabled[disabled] {
+		// background: $dark;
+		// color: $light;
+		// padding: 1rem 2rem;
+	}
+	.woocommerce-checkout-payment {
+		label {
+			@include text-sm;
+		}
+	}
+}
+
+// Notices
+// .woocommerce-info {
+// 	border-top-color: $dark;
+// 	&::before {
+// 		color: $dark;
+// 	}
+// }
+// .woocommerce-message {
+// 	border-top-color: $green;
+// 	&::before {
+// 		color: $green;
+// 	}
+// }
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+	@include text-sm;
+	background-color: $light;
+	border-bottom: 1px solid $dark;
+	border-top-color: $dark;
+	&::before {
+		color: $dark;
+	}
+	a {
+		text-decoration: underline;
+	}
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+	width: auto;
+}
+
+// COMPTE
+.woocommerce-MyAccount-navigation-link {
+	@include text-sm;
+	border-top: 1px solid $dark;
+	padding: 15px 10px;
+	text-transform: uppercase;
+	font-weight: 600;
+
+	@media screen and (min-width: $lg) {
+		margin-right: 5vw;
+	}
+
+	&.is-active {
+		background: $dark;
+		color: $light;
+	}
+}
+
+// Commande validée
+.woocommerce-thankyou-order-received {
+	// @apply text-xl mb-12 font-title font-bold;
+}
