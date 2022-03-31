@@ -560,45 +560,4 @@
 	}
 
 	// MENU SEARCH
-	.search-menu {
-		position: fixed;
-		z-index: -1;
-		top: 66px;
-		left: 0;
-
-		width: 100%;
-		padding: 160px var(--page-padding) 100px;
-
-		background: $light;
-
-		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-		visibility: hidden;
-		transition: visibility 0s 0.75s,
-			clip-path 0.75s cubic-bezier(0.5, 0, 0, 1);
-
-		@media screen and (min-width: $lg) {
-			top: 160px;
-			padding: var(--section-padding-sm) var(--page-padding)
-				calc(var(--section-padding-sm) + 80px);
-		}
-
-		&__container {
-			opacity: 0;
-			transform: translateY(150px);
-			transition: all 0.75s ease-in;
-		}
-
-		&.active {
-			visibility: visible;
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-			transition: visibility 0s,
-				clip-path 0.85s cubic-bezier(0.5, 0, 0, 1);
-
-			.search-menu__container {
-				transform: translateY(0);
-				opacity: 1;
-				transition: all 0.75s $ease;
-			}
-		}
-	}
 }
