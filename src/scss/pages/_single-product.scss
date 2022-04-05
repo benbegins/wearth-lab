@@ -81,9 +81,9 @@
 					margin-left: 0;
 					padding-bottom: 120%;
 					padding-bottom: clamp(
-						100%,
+						115%,
 						calc(100vh - var(--page-padding) - 160px),
-						42vw
+						43vw
 					);
 				}
 
