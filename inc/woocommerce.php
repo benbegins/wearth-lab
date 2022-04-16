@@ -35,3 +35,16 @@ function ud_update_woo_flexslider_options( $options ) {
     $options['directionNav'] = true;
     return $options;
 }
+ 
+/*
+ * Add Revision support to WooCommerce Products
+ * 
+ */
+
+add_filter( 'woocommerce_register_post_type_product', 'cinch_add_revision_support' );
+
+function cinch_add_revision_support( $supports ) {
+     $supports['supports'][] = 'revisions';
+
+     return $supports;
+}
