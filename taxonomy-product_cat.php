@@ -2,6 +2,8 @@
 get_header(); 
 $cat = get_queried_object();
 $parent = $cat->parent ? get_term($cat->parent, 'product_cat') : null;
+$title = single_term_title("", false);
+                        
 
 if($parent){
     $name = $parent->name;
@@ -19,7 +21,8 @@ if($parent){
                 <!-- Titre -->
                 <div class="hero__title-container">                   
                     <h1 class="hero__title intro-reveal">
-                        <div class="line"><span class="reveal-element"><?php single_term_title(); ?></span></div>
+                        
+                        <div class="line"><span class="reveal-element"><?= strtolower($title) ?></span></div>
                     </h1>
                 </div>
 
@@ -36,6 +39,7 @@ if($parent){
                                 $args = [
                                     'taxonomy'=>'product_cat',
                                     'parent'=>$cat->term_id,
+                                    "orderby" => "name",
                                 ];
                                 $sub_categories = get_terms($args);
                                 foreach($sub_categories as $category):
@@ -69,7 +73,7 @@ if($parent){
                    
 
                     <h1 class="hero-subcat__title intro-reveal">
-                        <div class="line"><span class="reveal-element"><?php single_term_title(); ?></span></div>
+                        <div class="line"><span class="reveal-element"><?= strtolower($title) ?></span></div>
                     </h1>
 
                 </div>
@@ -87,6 +91,7 @@ if($parent){
                     'post_type'              => array( 'product' ),
                     'posts_per_page'         => -1,
                     'post_status'            => array( 'publish' ),
+                    'orderby'               => 'rand',
                     'tax_query'      		=> array(
                         array(
                             'taxonomy' => 'product_cat',

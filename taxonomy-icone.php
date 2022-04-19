@@ -15,7 +15,10 @@ $name = $term->name;
                     <div class="hero__icone">
                         <img src="<?= $picto['sizes']['medium'] ?>" alt="<?= $name ?>" width="<?= $width ?>">
                     </div>
-                    <div class="line"><span class="reveal-element"><?php single_term_title(); ?></span></div>
+                    <?php 
+                        $title = single_term_title("", false);
+                    ?>
+                    <div class="line"><span class="reveal-element"><?= strtolower($title) ?></span></div>
                 </h1>
                 <div class="hero__text"><?php the_archive_description(); ?></div>
             </div>

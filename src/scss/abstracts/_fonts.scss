@@ -40,7 +40,12 @@ body {
 // TEXT XL
 @mixin text-xl {
 	font-size: 6.25rem;
-	font-size: max(3.44rem, 2.78rem + 3.31vw);
+	font-size: clamp(3.44rem, 5.5vw, 2.78rem + 3.31vw);
+	hyphens: auto;
+
+	@media screen and (min-width: $sm) {
+		hyphens: none;
+	}
 }
 .text-xl {
 	@include text-xl;

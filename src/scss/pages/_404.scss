@@ -1,0 +1,29 @@
+.page-404 {
+	padding-bottom: var(--page-top);
+
+	.hero {
+		padding: var(--section-padding-sm) 0;
+		text-align: center;
+		min-height: calc(100vh - (var(--page-top) * 2));
+		display: grid;
+		place-content: center;
+
+		&__title {
+			@include text-xl;
+			font-family: $font-display;
+			line-height: 1.03;
+			text-transform: uppercase;
+		}
+
+		&__text {
+			animation: fondu 0.75s backwards;
+			animation-delay: 0.5s;
+		}
+
+		.btn-primary {
+			animation: fondu 0.75s backwards;
+			animation-delay: 0.5s;
+			margin-top: 4rem;
+		}
+	}
+}
