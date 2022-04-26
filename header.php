@@ -133,7 +133,6 @@
                         $args = [
                             "taxonomy" => "product_cat",
                             "parent" => $cat_parent->term_id,
-                            "orderby" => "name",
                         ];
                         $list_cat_femme = get_terms($args);
                     
@@ -169,7 +168,6 @@
                         $args = [
                             "taxonomy" => "product_cat",
                             "parent" => $cat_parent->term_id,
-                            "orderby" => "name",
                         ];
                         $list_cat_femme = get_terms($args);
                     
