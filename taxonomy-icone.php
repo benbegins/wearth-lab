@@ -29,6 +29,7 @@ $name = $term->name;
                 <?php
                 $args = [
                     "post_type" => ["product"],
+                    'posts_per_page'        => -1,
                     "tax_query" => [
                         [
                             "taxonomy" => "icone",

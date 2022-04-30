@@ -89,9 +89,9 @@ if($parent){
                 $cateID = get_queried_object()->term_id;
                 $args = array(
                     'post_type'              => array( 'product' ),
-                    'posts_per_page'         => -1,
                     'post_status'            => array( 'publish' ),
                     'orderby'               => 'rand',
+                    'posts_per_page'        => -1,
                     'tax_query'      		=> array(
                         array(
                             'taxonomy' => 'product_cat',
@@ -117,7 +117,7 @@ if($parent){
                     }
                 } else {
                     echo "Pas de produit à afficher";
-                }
+                }                
                 ?>
             </div>
         </section>
