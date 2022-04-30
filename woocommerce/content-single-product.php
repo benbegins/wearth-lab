@@ -134,7 +134,12 @@ $category_link = get_term_link( $product_category->term_id, 'product_cat' );
 				 * @hooked woocommerce_template_single_sharing - 50
 				 * @hooked WC_Structured_Data::generate_product_data() - 60
 				 */
-				do_action( 'woocommerce_single_product_summary' );
+				if($marque_slug === "archiduchesse"){
+					echo '<p class="dispo-en-boutique">Produit disponible uniquement dans notre boutique à Nantes</p>';
+				} else {
+					do_action( 'woocommerce_single_product_summary' );
+				}
+				
 				?>
 				<!-- Icones -->
 				<?php
