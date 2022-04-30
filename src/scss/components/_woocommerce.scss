@@ -251,3 +251,10 @@
 .woocommerce-thankyou-order-received {
 	// @apply text-xl mb-12 font-title font-bold;
 }
+
+// Hipli
+#wccf_checkout_field_colis_container {
+	label img {
+		margin: 0 auto;
+	}
+}
