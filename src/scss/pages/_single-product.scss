@@ -17,7 +17,7 @@
 				@include text-lg;
 				font-family: $font-display;
 				font-weight: bold;
-				line-height: 1.1;
+				line-height: 1.2;
 				animation: fondu 0.75s backwards;
 				animation-delay: 0.25s;
 			}
@@ -131,7 +131,7 @@
 					@include text-lg;
 					font-family: $font-display;
 					font-weight: bold;
-					line-height: 1;
+					line-height: 1.2;
 				}
 			}
 
@@ -142,6 +142,7 @@
 					font-weight: 600;
 					color: $green;
 					transition: color 0.25s;
+					margin-top: -0.2rem;
 
 					&:hover {
 						color: $dark;
@@ -217,6 +218,11 @@
 				}
 			}
 
+			.dispo-en-boutique {
+				font-weight: 600;
+				font-style: italic;
+			}
+
 			.price {
 				margin-bottom: 4rem;
 			}
@@ -247,12 +253,18 @@
 			.variations {
 				@include text-sm;
 				margin-bottom: 0 !important;
+				margin-top: 2rem;
+				position: relative;
 
 				select {
 					padding: 1rem;
 					width: 100%;
 					background: $light;
 					border: 1px solid $dark;
+				}
+				th.label {
+					position: absolute;
+					bottom: calc(100% - 0.75rem);
 				}
 				label {
 					line-height: 53px;

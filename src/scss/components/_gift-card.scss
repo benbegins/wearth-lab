@@ -1,0 +1,29 @@
+// PW GiftCard Plugin
+#pwgc-purchase-container {
+	.pwgc-field-container {
+		@include text-sm;
+		margin: 2rem 0;
+	}
+
+	input,
+	textarea {
+		background: none;
+		border: 1px solid $dark;
+		padding: 1rem;
+		outline: none;
+		width: 100%;
+	}
+
+	label {
+		font-weight: 700;
+	}
+}
+
+// Panier
+#pwgc-redeem-gift-card-form {
+	margin-bottom: 2rem;
+
+	#pwgc-redeem-button {
+		margin-left: 1rem;
+	}
+}

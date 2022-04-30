@@ -16,9 +16,12 @@ if ( post_password_required() ) {
 
 // Marque
 $marque = get_the_terms( get_the_ID() , 'marque')[0];
-$marque_name = $marque->name;
-$marque_slug = $marque->slug;
-$marque_link = get_term_link( $marque->term_id, 'marque' );
+if($marque){
+	$marque_name = $marque->name;
+	$marque_slug = $marque->slug;
+	$marque_link = get_term_link( $marque->term_id, 'marque' );	
+}
+
 
 // Categorie
 $categories = get_the_terms( get_the_ID(), 'product_cat' );
