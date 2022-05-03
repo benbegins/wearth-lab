@@ -13,7 +13,7 @@
                         <h2 class="contact__list__title">Adresse</h2>
                         <div class="contact__item__content">
                             <p>Wearth Lab <br>
-                            13 rue du château <br>
+                            13 rue du Château <br>
                             44000 Nantes</p>
                             <a href="https://goo.gl/maps/aRVQKeC54cff8DYk9" class="btn-primary" target="_blank">Voir la carte</a>
                         </div>

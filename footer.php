@@ -42,7 +42,7 @@
                     <div class="site-footer__section site-footer__adresse">
                         <p class="site-footer__title">Adresse</p>
                         <div class="content">
-                            <p>13 rue du chateau</p>
+                            <p>13 rue du Château</p>
                             <p>44000 Nantes</p>
                             <p>
                                 <?php
