@@ -118,7 +118,7 @@
 
 	// A LA UNE
 	.a-la-une {
-		@include section-pad-bottom;
+		// @include section-pad-bottom;
 
 		.container {
 			@media screen and (min-width: $md) {

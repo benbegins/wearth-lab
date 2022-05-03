@@ -118,21 +118,6 @@
         <?php endif; ?>
 
 
-        <!-- NEWSLETTER -->
-        <section class="newsletter" data-scroll-section>
-            <div class="container">
-                <div class="newsletter__wrapper">
-                    <h2 class="newsletter__title fade" data-scroll>Inscrivez-vous à la newsletter&nbsp;!</h2>
-                    <p class="newsletter__paragraph fade" data-scroll data-delay=".15">Soyez parmi les premiers à être au courant de nos nouveaux articles, collaborations, événements et bien plus encore.</p>
-                    <div class="form fade" data-scroll data-delay="0.3">
-                        <?= do_shortcode('[hf_form slug="newsletter"]') ?>
-                    </div>
-                </div>
-            </div>
-            <div class="illu" data-scroll data-scroll-speed="0.5"></div>
-        </section>
-
-
         <!-- ICONES -->
         <section class="icones" data-scroll-section>
             <div class="container">
