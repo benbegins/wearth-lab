@@ -121,7 +121,7 @@
         <!-- ICONES -->
         <section class="icones" data-scroll-section>
             <div class="container">
-                <h2 class="icones__title fade" data-scroll>La boutique Wearth Lab est un laboratoire de découvertes qui garantie, à la manière d’un label, des articles avec une démarche sincère dans leurs moyens de production.</h2>
+                <h2 class="icones__title fade" data-scroll>La boutique Wearth Lab est un laboratoire de découvertes qui garantit, à la manière d’un label, des articles avec une démarche sincère dans leurs moyens de production.</h2>
                 <?php get_template_part('./template-parts/icones-list'); ?>
                 <a href="<?= get_site_url() ?>/a-propos" class="btn-primary">Découvrir le concept</a>
             </div>
