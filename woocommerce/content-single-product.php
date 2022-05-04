@@ -201,7 +201,7 @@ $category_link = get_term_link( $product_category->term_id, 'product_cat' );
 	<section class="reassurance">
 		<div class="container">
 			<p class="reassurance__item">Frais de port offert dès 140 € d’achat</p>
-			<p class="reassurance__item">Retour gratuit sous 15 jours</p>
+			<p class="reassurance__item">Retour sous 15 jours</p>
 			<p class="reassurance__item">Récupérez votre article en boutique avec le click & collect</p>
 			<p class="reassurance__item">Choisissez une livraison responsable avec Hipli</p>
 		</div>
