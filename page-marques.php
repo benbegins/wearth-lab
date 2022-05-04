@@ -7,7 +7,7 @@
                 <h1 class="hero__title intro-reveal">
                     <div class="line"><span class="reveal-element">Les marques</span></div>
                 </h1>
-                <p class="hero__text">Chez Wearth Lab, nous ne confondons pas greenwashing et engagement environnemental. C’est pourquoi nous ne collaborons qu’avec des marques engagées dans une véritable démarche éthique, de fabrication française ou européenne et éco-responsable.</p>
+                <p class="hero__text">Chez Wearth Lab, nous ne confondons pas greenwashing et engagement environnemental. C’est pourquoi nous ne collaborons qu’avec des marques françaises, investies dans une véritable démarche éthique et éco-responsable, qui produisent dans des ateliers contrôlés à moins de 2500km de Nantes !</p>
             </div>
         </section>
 
