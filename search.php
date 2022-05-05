@@ -15,6 +15,7 @@
             <?php
             $args = [
                 "post_type" => ["product"],
+                "posts_per_page" => -1,
                 'meta_query' => array(
                     array(
                         'key' => '_stock_status',
