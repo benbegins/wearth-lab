@@ -7,7 +7,9 @@ const transition = () => {
 
 	// Outro
 	const links = document.querySelectorAll("a")
-	if (links) {
+	const woocommerce = document.querySelector(".woocommerce__container")
+
+	if (links && woocommerce === null) {
 		links.forEach((link) => {
 			if (link.target == "_blank") {
 				link.classList.add("no-transition")
