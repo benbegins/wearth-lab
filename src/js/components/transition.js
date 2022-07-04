@@ -10,6 +10,8 @@ const transition = () => {
 	const woocommerce = document.querySelector(".woocommerce__container")
 
 	if (links && woocommerce === null) {
+		console.log(woocommerce)
+
 		links.forEach((link) => {
 			if (link.target == "_blank") {
 				link.classList.add("no-transition")
