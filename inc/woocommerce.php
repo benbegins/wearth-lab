@@ -48,3 +48,18 @@ function cinch_add_revision_support( $supports ) {
 
      return $supports;
 }
+
+
+/**
+ * Disable out of stock variations
+ * @return Boolean
+ */
+
+function njengah_variation_is_active( $active, $variation ) {
+    if( ! $variation->is_in_stock() ) {
+        return false;
+    }
+    return $active;
+}
+   
+add_filter( 'woocommerce_variation_is_active', 'njengah_variation_is_active', 10, 2 );

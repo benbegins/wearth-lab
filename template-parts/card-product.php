@@ -65,9 +65,9 @@ if(isset($args['delay'])){
                     if ($variation['is_in_stock']){
                         echo '<span class="in-stock">' . $variationName . '</span>';
                     }
-                    else {
-                        echo '<span class="not-in-stock">' . $variationName . '</span>';
-                    }
+                    // else {
+                    //     echo '<span class="not-in-stock">' . $variationName . '</span>';
+                    // }
                 }
             }
             ?>
