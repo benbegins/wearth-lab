@@ -16,7 +16,7 @@ const init = () => {
 	animation()
 	isInit = true
 }
-window.addEventListener("DOMContentLoaded", init)
+// window.addEventListener("DOMContentLoaded", init)
 window.addEventListener("pageshow", init)
 // window.addEventListener("load", init)
 
