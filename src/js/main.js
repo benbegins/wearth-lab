@@ -17,6 +17,7 @@ const init = () => {
 	isInit = true
 }
 window.addEventListener("DOMContentLoaded", init)
+window.addEventListener("pageshow", init)
 // window.addEventListener("load", init)
 
 // Vue app
