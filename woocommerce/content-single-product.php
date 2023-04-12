@@ -74,7 +74,7 @@ $category_link = get_term_link( $product_category->term_id, 'product_cat' );
 					<!-- Image principale -->
 					<div class="swiper-slide">
 						<div class="img-container">
-							<?= wp_get_attachment_image($main_image, 'large'); ?>
+							<?= wp_get_attachment_image($main_image, 'medium_large', false, array('sizes'=>'(max-width:1024px) 100vw, 50vw')); ?>
 						</div>
 					</div>
 
@@ -85,7 +85,7 @@ $category_link = get_term_link( $product_category->term_id, 'product_cat' );
 					?>
 					<div class="swiper-slide">
 						<div class="img-container">
-							<?= wp_get_attachment_image($image, 'large'); ?>
+							<?= wp_get_attachment_image($image, 'medium_large', false, array('sizes'=>'(max-width:1024px) 100vw, 50vw')); ?>
 						</div>
 					</div>
 					<?php 

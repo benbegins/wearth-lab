@@ -3,22 +3,25 @@ import gsap from "gsap"
 const animOutro = (href) => {
 	const tl = new gsap.timeline()
 
-	gsap.to(".site-outro .overlay", {
+	tl.to(".site-outro .overlay", {
 		opacity: 0.75,
 		duration: 0.9,
 	})
 
-	gsap.to(
+	tl.to(
 		".site-outro .background-light",
 		{
 			scaleY: 1,
 			duration: 1.1,
 			ease: "expo.inOut",
+			onComplete: () => {
+				window.location.assign(href)
+			},
 		},
 		"-=0.9"
 	)
 
-	gsap.to(
+	tl.to(
 		".icon-loading",
 		{
 			opacity: 1,
@@ -26,9 +29,6 @@ const animOutro = (href) => {
 		},
 		"-=0.55"
 	)
-	setTimeout(() => {
-		window.location.assign(href)
-	}, 750)
 }
 
 export default animOutro

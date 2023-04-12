@@ -97,6 +97,7 @@
                             $args = [
                                 'data-scroll' => '',
                                 'data-scroll-speed' => '-0.5',
+                                'sizes' => '(max-width:768px) 100vw, 50vw'
                             ];
                             ?>
                             <?= wp_get_attachment_image($image['id'], 'large', false, $args); ?>

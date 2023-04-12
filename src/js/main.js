@@ -16,8 +16,8 @@ const init = () => {
 	animation()
 	isInit = true
 }
-window.addEventListener("pageshow", init)
-window.addEventListener("load", init)
+window.addEventListener("DOMContentLoaded", init)
+// window.addEventListener("load", init)
 
 // Vue app
 Vue.createApp(App).mount("#page")

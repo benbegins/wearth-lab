@@ -1,10 +1,7 @@
 {
-  "plugins": {
-    "postcss-import": {},
-    "tailwindcss/nesting": {},
-    "tailwindcss": {},
-    "autoprefixer": {
-      "grid": true
-    },
-  }
+	"plugins": {
+		"postcss-import": {},
+		"tailwindcss/nesting": {},
+		"tailwindcss": {}
+	}
 }
