@@ -7,7 +7,7 @@ import swiper from "./components/swiper"
 import animation from "./components/animation"
 
 // Init
-const isInit = false
+let isInit = false
 
 const init = () => {
 	if (isInit) return
