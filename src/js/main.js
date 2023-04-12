@@ -11,14 +11,14 @@ const isInit = false
 
 const init = () => {
 	if (isInit) return
+	isInit = true
 	swiper()
 	transition()
 	animation()
-	isInit = true
 }
 // window.addEventListener("DOMContentLoaded", init)
 window.addEventListener("pageshow", init)
-// window.addEventListener("load", init)
+window.addEventListener("load", init)
 
 // Vue app
 Vue.createApp(App).mount("#page")
