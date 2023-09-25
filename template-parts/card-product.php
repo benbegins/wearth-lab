@@ -14,7 +14,7 @@ if(isset($args['delay'])){
         <div class="img-container fade" data-scroll data-delay="<?= $delay ?>">
             <?php 
             if(get_post_thumbnail_id ()){
-                the_post_thumbnail('medium', ['class' => 'card-product__img', 'sizes' => '(max-width:640px) 100vw, (max-width:768px) 50vw, 33vw']);
+                the_post_thumbnail('medium', ['class' => 'card-product__img', 'sizes' => '(max-width:640px) 100vw, (max-width:768px) 50vw, 33vw', 'loading'=>'lazy']);
             } else{
                 echo 'Pas de visuel';
             }
@@ -32,7 +32,7 @@ if(isset($args['delay'])){
                         $picto = get_field('icone_blanche', 'icone_' . $icone->term_id);
                         $width = $picto['width'] / 3.25;
                 ?>
-                <img class="card-product__icone-img" src="<?= $picto['sizes']['thumbnail'] ?>" alt="<?= $name ?>" title="<?= $name ?>" width="<?= $width ?>">
+                <img class="card-product__icone-img" src="<?= $picto['sizes']['thumbnail'] ?>" alt="<?= $name ?>" title="<?= $name ?>" width="<?= $width ?>" loading="lazy">
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>

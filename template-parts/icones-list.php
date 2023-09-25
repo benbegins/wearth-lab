@@ -15,7 +15,7 @@
         ?>
         <li class="icones__item fade" data-scroll data-delay="<?= $delay ?>">
             <div class="icones__img-container">
-                <a href="<?= $link ?>"><img src="<?= $picto['sizes']['medium'] ?>" alt="<?= $name ?>" width="<?= $width ?>"></a>
+                <a href="<?= $link ?>"><img src="<?= $picto['sizes']['medium'] ?>" alt="<?= $name ?>" width="<?= $width ?>" loading="lazy"></a>
             </div>
             <p><?= $name; ?></p>
         </li>

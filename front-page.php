@@ -40,6 +40,9 @@
             'post__in'            => wc_get_featured_product_ids(),
         );
         $query = new WP_Query( $args );
+
+        
+
         if ( $query->have_posts() ) :
         ?>
         <section class="produits" data-scroll-section>
@@ -190,7 +193,7 @@
                 <div class="femme">
                     <a href="<?= get_site_url() ?>/categorie-produit/femme">
                         <div class="img-container">
-                            <img src="<?= get_template_directory_uri(  ) ?>/src/img/cat-femme.jpg" alt="Boutique femme" data-scroll data-scroll-speed="-0.5">
+                            <img src="<?= get_template_directory_uri(  ) ?>/src/img/cat-femme.jpg" alt="Boutique femme" data-scroll data-scroll-speed="-0.5" loading="lazy">
                             <div class="over"></div>
                             <div class="reveal-wipe" data-scroll></div>
                         </div>
@@ -203,7 +206,7 @@
                 <div class="homme">
                     <a href="<?= get_site_url() ?>/categorie-produit/homme">
                         <div class="img-container">
-                            <img src="<?= get_template_directory_uri(  ) ?>/src/img/cat-homme.jpg" alt="Boutique homme" data-scroll data-scroll-speed="-0.5">
+                            <img src="<?= get_template_directory_uri(  ) ?>/src/img/cat-homme.jpg" alt="Boutique homme" data-scroll data-scroll-speed="-0.5" loading="lazy">
                             <div class="over"></div>
                             <div class="reveal-wipe" data-scroll data-delay="0.3"></div>
                         </div>

@@ -57,7 +57,7 @@ function wearthlab_theme_register_assets(){
     );
 
     // Remove Jquery
-    wp_deregister_script( 'jquery' );
+    // wp_deregister_script( 'jquery' );
     // Remove gutenberg css
 		wp_dequeue_style( 'wp-block-library' );
         // Remove wp-embed script

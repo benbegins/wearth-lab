@@ -4,7 +4,7 @@ import "../scss/style.scss"
 import LocomotiveScroll from "locomotive-scroll"
 
 // Scripts
-import App from "./App.vue"
+// import App from "./App.vue"
 import swiper from "./components/swiper"
 import animation from "./components/animation"
 import Menu from "./components/menu"
@@ -21,6 +21,7 @@ const init = () => {
 	})
 
 	menu = new Menu(loco)
+	menuSticky(loco)
 }
 
 // Vue app
@@ -32,3 +33,15 @@ window.addEventListener("load", init)
 // window.addEventListener("popstate", init)
 
 // init()
+
+const menuSticky = (loco) => {
+	const header = document.querySelector(".site-header")
+
+	loco.on("scroll", (e) => {
+		if (e.scroll.y > 75) {
+			header.classList.add("is-scrolling")
+		} else {
+			header.classList.remove("is-scrolling")
+		}
+	})
+}
