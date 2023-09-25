@@ -10,10 +10,11 @@
 .intro-reveal {
 	.reveal-element {
 		display: inline-block;
+		transform: translateY(100%);
 	}
 
 	.line {
-		clip-path: "polygon(0 0, 100% 0, 100% 0, 0 0)";
+		overflow: hidden;
 	}
 }
 

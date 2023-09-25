@@ -10,8 +10,7 @@
 			text-align: center;
 
 			@media screen and (min-width: $lg) {
-				padding: var(--section-padding-sm) 0
-					calc(var(--section-padding-sm) + 60px);
+				padding: var(--section-padding-sm) 0 calc(var(--section-padding-sm) + 60px);
 			}
 		}
 

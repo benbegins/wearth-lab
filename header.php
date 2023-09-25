@@ -81,29 +81,45 @@
 
         <div class="container">
             <!-- Burger -->
-            <button class="btn-burger" @click="openMenu"></button>
+            <button class="btn-burger"></button>
             
             <!-- Main menu -->
-            <nav class="main-menu header-menu" :class="{active: menuActive}">
+            <nav class="main-menu header-menu">
                 <div class="header-menu__container">
-                    <button class="header-menu__btn-close" @click="closeMenu">Fermer</button>
+                    <button class="header-menu__btn-close">Fermer</button>
                     <p class="header-menu__title">Menu</p>
                     <ul class="header-menu__list">
                         <!-- Femme -->
                         <li class="header-menu__item">
-                            <button @click="toggleSubMenu('femme')">Femme</button>
+                            <button class="btn-menu" data-menu="femme">Femme</button>
                         </li>
                         <!-- Homme -->
                         <li class="header-menu__item">
-                            <button @click="toggleSubMenu('homme')">Homme</button>
+                            <button class="btn-menu" data-menu="homme">Homme</button>
                         </li>
                         <!-- Marques -->
                         <li class="header-menu__item">
-                            <a href="<?= get_site_url() ?>/marques">Marques</a>
+                            <?php
+                            $slug = 'marques';
+                            $page = get_page_by_path($slug);
+                            if ($page) :
+                                ?>
+                                    <a href="<?= get_permalink($page->ID) ?>">Marques</a>
+                                <?php
+                            endif;
+                            ?>
                         </li>
                         <!-- A propos -->
                         <li class="header-menu__item">
-                            <a href="<?= get_site_url() ?>/a-propos">À propos</a>
+                        <?php
+                            $slug = 'a-propos';
+                            $page = get_page_by_path($slug);
+                            if ($page) :
+                                ?>
+                                    <a href="<?= get_permalink($page->ID) ?>">À propos</a>
+                                <?php
+                            endif;
+                            ?>
                         </li>
                     </ul>
                     <div class="header-menu__rs">
@@ -118,7 +134,7 @@
             </nav>
 
             <!-- Sous-menu femme -->
-            <div class="sub-menu header-menu" :class="{active: menuFemmeActive}">
+            <div class="sub-menu header-menu" data-submenu="femme" :class="{active: menuFemmeActive}">
                 <div class="header-menu__container">
                     <button class="header-menu__btn-back" @click="closeSubMenu">Retour</button>
                     <button class="header-menu__btn-close" @click="closeMenu">Fermer</button>
@@ -154,7 +170,7 @@
             </div>
 
             <!-- Sous-menu homme -->
-            <div class="sub-menu header-menu" :class="{active: menuHommeActive}">
+            <div class="sub-menu header-menu"  data-submenu="homme" :class="{active: menuHommeActive}">
                 <div class="header-menu__container">
                     <button class="header-menu__btn-back" @click="closeSubMenu">Retour</button>
                     <button class="header-menu__btn-close" @click="closeMenu">Fermer</button>
@@ -191,7 +207,7 @@
 
             <!-- Search & Card -->
             <div class="search-card">
-                <button class="btn-search" @click="toggleSubMenu('search')">Recherche</button>
+                <button class="btn-search btn-menu" data-menu="search" @click="toggleSubMenu('search')">Recherche</button>
                 <a href="<?php echo wc_get_cart_url(); ?>" class="btn-card">
                 <?php 
                     $card_items = WC()->cart->get_cart_contents_count();
@@ -209,7 +225,7 @@
         </div>
 
         <!-- Menu Recherche -->
-        <div class="search-menu" :class="{active: menuSearch}">
+        <div class="search-menu sub-menu" data-submenu="search" :class="{active: menuSearch}">
             <div class="search-menu__container">
                 <form action="/" method="get" class="form-search">
                     <input type="text" placeholder="Rechercher un produit" name="s" />

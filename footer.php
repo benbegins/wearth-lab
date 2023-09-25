@@ -76,7 +76,7 @@
 
 
 <!-- Page Transition -->
-<div class="site-intro"></div>    
+<!-- <div class="site-intro"></div>    
 <div class="site-outro">
     <div class="overlay"></div>
     <div class="background-light"></div>
@@ -89,7 +89,7 @@
         <path id="Tracé_92" data-name="Tracé 92" d="M890.747-1660.681h-2.525a.577.577,0,0,0-.577.577.577.577,0,0,0,.577.577h2.525a.577.577,0,0,0,.577-.577A.577.577,0,0,0,890.747-1660.681Z" transform="translate(-865.977 1686.319)" fill="#1a1f22"/>
         <path id="Tracé_93" data-name="Tracé 93" d="M912.983-1607.694a3,3,0,0,1,3,3h1.154a3,3,0,0,1,3-3v-1.154a4.153,4.153,0,0,0-3.575,2.044,4.153,4.153,0,0,0-3.575-2.044Z" transform="translate(-886.891 1643.537)" fill="#1a1f22"/>
     </svg>
-</div>
+</div> -->
 
 <?php wp_footer(); ?>
 
