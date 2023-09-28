@@ -69,14 +69,12 @@
 			}
 
 			.instagram {
-				background: url("/src//img/icon-instagram.svg") center center
-					repeat-x;
+				background: url("/src//img/icon-instagram.svg") center center repeat-x;
 				background-size: contain;
 				margin-bottom: 1rem;
 			}
 			.facebook {
-				background: url("/src//img/icon-facebook.svg") center center
-					no-repeat;
+				background: url("/src//img/icon-facebook.svg") center center no-repeat;
 				background-size: contain;
 			}
 		}
@@ -102,8 +100,8 @@
 			@media screen and (min-width: $lg) {
 				transition: transform 1.5s $ease;
 				transform: translateY(-20%);
-				opacity: 0;
-				animation: fondu 1s ease 1s forwards;
+				// opacity: 0;
+				// animation: fondu 1s ease 1s forwards;
 
 				.img-link {
 					background: none;
@@ -249,8 +247,7 @@
 			right: 0;
 			width: 25%;
 			height: 30%;
-			background: url("/src/img/illu-newsletter.png") bottom right
-				no-repeat;
+			background: url("/src/img/illu-newsletter.png") bottom right no-repeat;
 			background-size: contain;
 
 			@media screen and (min-width: $lg) {
